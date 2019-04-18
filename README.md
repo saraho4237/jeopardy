@@ -75,6 +75,10 @@ The colors correspond to the year that the question aired. The seemingly even sp
 I started with the list of english stopwords from gensim's parsing.preprocessing package. From there, I built up the list of stop words using LDA models. Tokens that appeared in the top 30 most salient words in multiple topics were added to the list. Some of these included:
 >"clue","come","call","say","see","know","name","type","like","mean","term".
 
+After removing stop words, the 20 most frequently seen words in the corpus (nomalized by the probability that they appear in a document) are visualized below:
+
+![](images/top20_words_corpus.png)
+
 ## Model
 
 The goal of Topic Modeling is to extract topics that are clear (easily understood/explained) and distinct (separate from other topics).
@@ -137,13 +141,22 @@ The interpreted latent topics from this model are below (visualized as a word cl
 | ![](images/Literature.png) | ![](images/History.png)                 |
 | ![](images/Music.png)      | ![](images/Science_and_Measurement.png) |
 
-# Example of questions from each of the 8 topics
+The following table provides two example questions that I believed should be "science" questions. The table shows how the questions loaded onto each of the topics. They both loaded heavily onto "science." However,the first one loaded most heavily onto sports. So, using a simple softmax function, the first question would be classified (incorrectly, I believe) as a "sports" question.
+
+| Question                                                                                        | Sports | History | Science/Measurement | Music | Geography | Literature | Cuisine | Film and Theatre |
+|-------------------------------------------------------------------------------------------------|--------|---------|---------------------|-------|-----------|------------|---------|------------------|
+| Lava & igneous rock are formed from this hot liquid rock material found under the earth's crust | .42    | .01     | .36                 | .01   | .01       | .01        | .14     | .01              |
+| One mole of any substance always has the same number, 6.022 x 10<sup>23</sup> of these          | .03    | .28     | .53                 | .03   | .03       | .03        | .03     | .03              |
 
 # Conclusion
 
 Topic modeling seems to be all about preprocessing the text data. I could have spent many more days experimenting with different ways to featurize the corpus.
 
-I did get some nice topics from gensim's LDA model. The EDA suggested that many of the questions center around geography. The model produced a latent topic with words that seem consistent with geographic themes! yay! I also found strong latent topics related to sports, cuisine, literature, music, science, and film/theatre. The topic interpreted as "history" may be a bit of a stretch. It did include words like "french","ancient","time","event", and "cause" that seem reasonable.
+Additionally, a lot of topic modeling is up to interpretation (how to label latent topics, how to judge the quality of topics, etc.)
+
+I got reasonable topics from gensim's LDA model. The EDA suggested that many of the questions center around geography. The model produced a latent topic with words that seem consistent with geographic themes! yay! I also found strong latent topics related to sports, cuisine, literature, music, science, and film/theatre. The topic interpreted as "history" may be a bit of a stretch. It did include words like "french","ancient","time","event", and "cause" that seem reasonable.
+
+A quick review of how questions loaded onto topics suggested that the model performed reasonably well (how is that for a data science metric??).
 
 SO... to answer the initial question, "How can you prepare to be on Jeopardy! ?"
 
