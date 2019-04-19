@@ -7,11 +7,10 @@
 1. [Background](#background)
 2. [Project Goal](#project-goal)
 3. [Data](#data)
-4. [EDA](#eda)
-5. [Data Preprocessing / More EDA](#processing-/-eda-of-jeopardy-questions-corpus)
-6. [Model](#model)
-7. [Results](#results)
-8. [Conclusion/Future Direction](#conclusion)
+4. [EDA/Data Preprocessing](#EDA-of-Jeopardy-DataFrame)
+5. [Model](#model)
+6. [Results](#results)
+7. [Conclusion/Future Direction](#conclusion)
 
 ## Background
 
