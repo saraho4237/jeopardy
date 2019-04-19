@@ -50,23 +50,11 @@ def get_data(filename):
 
 
 if __name__ == '__main__':
-    # parser = argparse.ArgumentParser(
-    #     description='Fit a Text Classifier model and save the results.')
-    # parser.add_argument('--data', help='A csv file with input data.')
-    # parser.add_argument('--out', help='A file to save the pickled model object to.')
-    # args = parser.parse_args()
-    #
-    # id2word,bow_corpus = get_data(args.data)
-    # ttt_model = TextToTopics()
-    # ttt_model.fit(X)
-    # print(args.out)
-    # print(str(args.out))
-    # with open(args.out, 'w') as f:
-    #     pickle.dump(ttt_model, f)
 
     id2word,bow_corpus = get_data("JEOPARDY_QUESTIONS1.json")
     ttt_model = TextToTopics(bow_corpus,id2word)
     ttt_model.fit(8)
     ttt_model.print_top10_topic_keywords()
+    # Uncomment and run this to save new model:
     # with open(args.out, 'w') as f:
     #     pickle.dump(ttt_model, f)
