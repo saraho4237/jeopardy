@@ -2,6 +2,8 @@
 
 ![](images/Jeopardy.png)
 
+# INCLUDE TABLE OF CONTENTS
+
 ## Background
 
 The current version of the game show, Jeopardy! has been running continuously since 1984. The show has been hosted by Alex Trebek since its inception. Each episode of Jeopardy! has three contestants answering three rounds of questions: Jeopardy, Double Jeopardy, and Final Jeopardy (plus a very rare tie-break round). The first and second rounds contain questions ranging in value from $200 to $2,000. The first two rounds each have six categories with five questions per category. The Final Jeopardy round is a single question where contestants may wager up to the amount they banked in the first two rounds. All answers must be phrased as questions. The winner takes home their cash earnings and has the opportunity to compete in the next game.
