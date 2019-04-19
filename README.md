@@ -103,11 +103,24 @@ For these reasons, I chose to move forward with the gensim LDA model. Further, g
 
 ### About the Model
 
-Latent Dirichlet Allocation (LDA) is an unsupervised soft clustering technique. When used with a large corpus of text data, LDA can be used to extract hidden topics from large volumes of text.
+**Latent Dirichlet Allocation (LDA)** is a generative, unsupervised, soft clustering technique. When used with a large corpus of text data, LDA can be used to extract hidden topics from large volumes of text.
 
-LDA turns each document into a collection of topics and each topic into a collection of words.
+LDA turns each document into a collection of topics (theta (ϴ) matrix) and each topic into a collection of words (phi (ɸ) matrix).
 
-"Topic models learn topics—typically represented as sets of important words—automatically from unlabelled documents in an unsupervised way. This is an attractive method to bring structure to otherwise unstructured text data, but Topics are not guaranteed to be well interpretable, therefore, coherence measures have been proposed to distinguish between good and bad topics."
+#### ϴ --> n_doc x n_topic matrix
+
+![](images/theta.png)
+[source](https://en.wikipedia.org/wiki/Dirichlet_distribution)
+
+#### ɸ --> n_topic x n_word matrix
+
+![](images/phi.png)
+[source](https://en.wikipedia.org/wiki/Dirichlet_distribution)
+
+The matrices are initialized using the bag of words matrix where each word is randomly assigned to one of k topics.
+
+The matrices are updated based on the topic that maximizes:
+**P (topic | doc)* P (word | topic)**  
 
 ### Model Optimization
 
