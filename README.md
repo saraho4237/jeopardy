@@ -2,7 +2,16 @@
 
 ![](images/Jeopardy.png)
 
-# INCLUDE TABLE OF CONTENTS
+## Table of Contents
+
+1. [Background](#background)
+2. [Project Goal](#project-goal)
+3. [Data](#data)
+4. [EDA](#eda)
+5. [Data Preprocessing / More EDA](#processing-/-eda-of-jeopardy-questions-corpus)
+6. [Model](#model)
+7. [Results](#results)
+8. [Conclusion/Future Direction](#conclusion)
 
 ## Background
 
@@ -22,7 +31,7 @@ The project will rely on natural language processing and soft clustering methods
 
 The corpus consists of questions from 3,640 episodes of Jeopardy! The episodes aired between September 10, 1984 (the first episode with Alex Trebek) and January 27, 2012. After removing questions containing media files (pictures, video clips, audio clips) the corpus includes 206,408 documents (questions).
 
-### EDA of Jeopardy DataFrame
+## EDA of Jeopardy DataFrame
 
 The 25 most common answers are as follows (in order of frequency):
 
@@ -48,7 +57,7 @@ The questions in the corpus are relatively balanced in the months they aired (ex
 
 ![](images/month_bar.png)
 
-### Processing/EDA of Jeopardy Questions Corpus
+## Processing/EDA of Jeopardy Questions Corpus
 
 #### Example Question: "Lava & igneous rock are formed from this hot liquid rock material found under the earth's crust"
 
@@ -124,8 +133,6 @@ The matrices are initialized using the bag of words matrix where each word is ra
 The matrices are updated based on the topic that maximizes:
 **P (topic | doc)* P (word | topic)**  
 
-# INCLUDE MORE ABOUT LDA...pic of Dirichlet distribution
-
 ### Model Optimization
 
 How to improve the gensim LDA model?
@@ -150,7 +157,9 @@ The best model both visually and in terms of interpretability used gensim's LDA 
 
 ![](images/8top.png)
 
-The interpreted latent topics from this model are below (visualized as a word cloud from their 30 most common words).
+## Results
+
+The interpreted latent topics from the 8 topic LDA model are below (visualized as a word cloud from their 30 most influential words).
 
 | ![](images/Geography.png)  | ![](images/Sports.png)                  |
 |----------------------------|-----------------------------------------|
@@ -165,7 +174,7 @@ The following table provides two example questions that I believed should be "sc
 | Lava & igneous rock are formed from this hot liquid rock material found under the earth's crust | .42    | .01     | .36                 | .01   | .01       | .01        | .14     | .01              |
 | One mole of any substance always has the same number, 6.022 x 10<sup>23</sup> of these          | .03    | .28     | .53                 | .03   | .03       | .03        | .03     | .03              |
 
-# Conclusion
+## Conclusion
 
 Topic modeling seems to be all about preprocessing the text data. I could have spent many more days experimenting with different ways to featurize the corpus.
 
@@ -188,7 +197,7 @@ I would conclude that you should focus studies on:
 * History
 * Music
 
-# Future Direction
+## Future Direction
 * Use spaCy's lemmatizer to preprocess words
 * Experiment with n_grams
 * Continue to tune stop words
