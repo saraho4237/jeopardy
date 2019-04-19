@@ -109,6 +109,8 @@ LDA turns each document into a collection of topics and each topic into a collec
 
 "Topic models learn topics—typically represented as sets of important words—automatically from unlabelled documents in an unsupervised way. This is an attractive method to bring structure to otherwise unstructured text data, but Topics are not guaranteed to be well interpretable, therefore, coherence measures have been proposed to distinguish between good and bad topics."
 
+# INCLUDE MORE ABOUT LDA...pic of Dirichlet distribution
+
 ### Model Optimization
 
 How to improve the gensim LDA model?
